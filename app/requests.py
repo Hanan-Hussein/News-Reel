@@ -1,12 +1,12 @@
 import urllib3
 import json
-from app.models import articles, news_source
+from app.models import Articles, News_Source
 from datetime import datetime
 
 
 # Imports of article class and news source class
-News_Source = news_source.News_Source
-Article = articles.Articles
+News_Source = News_Source
+Article = Articles
 api_key=None
 sources_url=None
 categories_url=None

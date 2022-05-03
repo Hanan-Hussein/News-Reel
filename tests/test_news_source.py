@@ -1,11 +1,10 @@
 import unittest
-from app.models import articles
+from app.models import News_Source
 
-Article=articles.Articles
 
-class TestArticles(unittest.TestCase):
+class test_news_source(unittest.TestCase):
     """
-    The test for the articles class
+    The test for the news_source class
 
     Args:
         unittest : The unittest
@@ -14,13 +13,13 @@ class TestArticles(unittest.TestCase):
         """
         This is the set up that runs before the test
         """
-        self.new_article= Article('Hanan','The cries of the modern man','Long description ...','https//www.image.jpg','https://www.image.jpg','22-11-02')
+        self.new_news_source = News_Source('BBC','www.news.com','this is a news source','KE','Swahili','Romantic',1)
         
     def test_news_source_(self):
         """
-        Test if the instance created by article class
+        Test if the instance created by news_source
         """
-        self.assertTrue(isinstance(self.new_article,Article))
+        self.assertTrue(isinstance(self.new_news_source,News_Source))
         
 if __name__ == '__main__':
     unittest.main()
