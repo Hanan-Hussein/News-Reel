@@ -1,6 +1,6 @@
 # News-Reel
 ### By Hanan Hussein
-### [Live Site](news-api-reel.herokuapp.com/) 
+### [Live Site](https://news-api-reel.herokuapp.com) 
 <img width="1440" alt="Screenshot 2022-05-03 at 21 54 16" src="https://user-images.githubusercontent.com/36597096/166555472-d9f60297-4139-4472-aaf6-b8be5c76e6c8.png">
 
 ## Description 
