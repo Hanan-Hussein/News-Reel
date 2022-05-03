@@ -1,23 +1,25 @@
-from distutils.command import config
-from turtle import pu
-from app import app
 import urllib3
 import json
-from .models import articles, news_source
+from app.models import articles, news_source
 from datetime import datetime
 
 
 # Imports of article class and news source class
 News_Source = news_source.News_Source
 Article = articles.Articles
-
+api_key=None
+sources_url=None
+categories_url=None
+articles_url=None
+top_story_url=None
 # Imports of Api Key and base url
-
-api_key = app.config['NEWS_APP_API_KEY']
-sources_url = app.config['NEWS_BASE_URL_SOURCES']
-categories_url = app.config['NEWS_BASE_URL_CATEGORIES']
-articles_url = app.config['NEWS_BASE_URL_ARTICLES']
-top_story_url = app.config['NEWS_BASE_URL_TOP_STORIES']
+def configure_request(app):
+    global api_key,sources_url,categories_url,articles_url,top_story_url
+    api_key = app.config['NEWS_APP_API_KEY']
+    sources_url = app.config['NEWS_BASE_URL_SOURCES']
+    categories_url = app.config['NEWS_BASE_URL_CATEGORIES']
+    articles_url = app.config['NEWS_BASE_URL_ARTICLES']
+    top_story_url = app.config['NEWS_BASE_URL_TOP_STORIES']
 
 
 def process_data(news_source:list):
