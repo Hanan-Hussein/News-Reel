@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-2">
+        Top Story
+    </h1>
+    {{macro.displaytrending(trending_news)}}
+    <div class="my-4">
+        <h1 class="">
+            News Sources
+        </h1>   
+           <div class="row">
+            {{macro.displaynewSource(news_sources)}}
+
+           </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
