@@ -13,7 +13,7 @@ categories_url=None
 articles_url=None
 top_story_url=None
 # Imports of Api Key and base url
-def configure_request(app):
+def config_request(app):
     global api_key,sources_url,categories_url,articles_url,top_story_url
     api_key = app.config['NEWS_APP_API_KEY']
     sources_url = app.config['NEWS_BASE_URL_SOURCES']
