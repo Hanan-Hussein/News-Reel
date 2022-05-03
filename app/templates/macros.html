@@ -1,0 +1,68 @@
+<!-- Macro for the News Article -->
+{% macro article(news_articles) %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        {% for article in news_articles %}
+        <div class="col">
+            <div class="card cards">
+                <img src={{article.url_to_image}} class="card-img-top" alt="News Image">
+                <div class="card-body cards-body px-1 ">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <p class="card-text">
+                        {{article.description}}
+                    </p>
+                    <p><span><a class="text-decoration-none text-danger" href="{{article.url}}" target="_blank">
+                        Read More ...
+                    </a></span></p>
+                    <p class="text-muted">Published on : {{article.published_at}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}
+<!-- Macro for Headline -->
+{% macro displaytrending(headline) %}
+{% for trend in headline %}
+<div class="d-flex">
+
+    <img src="{{trend.url_to_image}}" width="600">
+    <div class="m-5">
+        <strong>
+            <p>{{trend.title}}</p>
+        </strong>
+        <p>{{trend.description}}</p>
+        <div class="d-flex justify-content-between flex-row mt-2">
+            <p>{{trend.published_at}}</p>
+            <a class="text-decoration-none text-danger" href="{{trend.url}}" target="_blank">
+                <p>Read More ...</p>
+            </a>
+
+        </div>
+
+
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}
+<!-- Macro for News Sources -->
+{% macro displaynewSource(news) %}
+{% for source in news %}
+<div class="col-md-4">
+    <a href="/sources/{{source.id}}" class="text-decoration-none">
+        <div class="card text-white newscard mb-3" style="max-width: 30rem;  height:40vh">
+            <div class="card-body">
+
+                <strong>
+                    <h5 class="card-title">{{source.name}}</h5>
+
+                </strong>
+                <p class="card-text">{{source.description}}</p>
+
+            </div>
+        </div>
+    </a>
+</div>
+{% endfor %}
+{% endmacro %}
